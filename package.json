@@ -1,7 +1,7 @@
 {
-  "name": "@utori-dev/template-react-app-prototype",
+  "name": "@chellimiller/color-builder",
   "version": "1.0.0",
-  "description": "Starter web app with HTML, CSS, JavaScript, and development dependencies.",
+  "description": "React app to create color palettes for Material 3 or Carbon Design System v11.",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/utori-dev/template-react-app-prototype.git"
+    "url": "git+https://github.com/chellimiller/color-builder.git"
   },
   "keywords": [
     "html",
@@ -28,9 +28,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/utori-dev/template-react-app-prototype/issues"
+    "url": "https://github.com/chellimiller/color-builder/issues"
   },
-  "homepage": "https://github.com/utori-dev/template-react-app-prototype#readme",
+  "homepage": "https://github.com/chellimiller/color-builder#readme",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
