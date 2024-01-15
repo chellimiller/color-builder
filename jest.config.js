@@ -23,7 +23,7 @@ const config = {
     '/node_modules/',
     'index',
     '_dexie.ts',
-    '_store.js',
+    '_store.ts',
   ],
   coverageThreshold: {
     // Specifies all global coverage at 100%

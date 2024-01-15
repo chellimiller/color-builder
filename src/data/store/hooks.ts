@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { Selector } from '@reduxjs/toolkit';
 import { isEqual as isDeepEqual } from 'lodash';
 import { AppState, EqualityChecker } from './types';
-import store from './store';
+import store from './_store';
 
 function useSelector<T>(
   selector: Selector<AppState, T>,
@@ -25,14 +25,14 @@ function useSelector<T>(
   return value;
 }
 
-const selectMode = (state: AppState) => state.theme.mode;
+const selectThemeMode = (state: AppState) => state.theme.mode;
 
 /**
  * Returns the color scheme for the current theme.
  *
  * @returns 'light' or 'dark'
  */
-export const useMode = () => useSelector(selectMode);
+export const useThemeMode = () => useSelector(selectThemeMode);
 
 const selectDialogData = (state: AppState, key: string) =>
   state.dialog?.key === key ? state.dialog.data : null;
