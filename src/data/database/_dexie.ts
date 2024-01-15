@@ -1,15 +1,12 @@
 import Dexie, { Table } from 'dexie';
-import { Entity, Setting } from './types';
+import { Entity } from './types';
 
 class DexieDatabase extends Dexie {
-  config!: Table<Setting, Setting['key']>;
-
   entities!: Table<Entity, Entity['id']>;
 
   constructor() {
     super('color-builder');
     this.version(1).stores({
-      config: '++key',
       entities: '++id',
     });
   }

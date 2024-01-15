@@ -58,16 +58,16 @@ module.exports = {
                   'Use the views/ directory for components that need to know about routes.',
               },
               {
-                group: ['dexie', 'dexie-react-hooks'],
-                message:
-                  'State implementation should only be handled in store/',
+                group: ['dexie', 'dexie-react-hooks', '*redux*'],
+                message: 'State implementation should only be handled in data/',
               },
               {
                 group: [
                   'dexie',
                   'dexie-react-hooks',
-                  '**/store',
-                  '**/store/**',
+                  '*redux*',
+                  '**/data',
+                  '**/data/**',
                   '**/views/**',
                 ],
                 message:
@@ -88,14 +88,13 @@ module.exports = {
             // However, it can know about routes and access anything else in the app.
             patterns: [
               {
-                group: ['dexie', 'dexie-react-hooks'],
-                message:
-                  'State implementation should only be handled in store/',
+                group: ['dexie', 'dexie-react-hooks', '*redux*'],
+                message: 'State implementation should only be handled in data/',
               },
               {
-                group: ['**/store/**'],
+                group: ['**/data/**'],
                 message:
-                  'Only import from the top level of the store directory.',
+                  'Only import from the top level of the data directory.',
               },
             ],
           },
@@ -103,12 +102,12 @@ module.exports = {
       },
     },
     {
-      files: ['**/store/**'],
+      files: ['**/data/**'],
       rules: {
         'no-restricted-imports': [
           'error',
           {
-            // The "src/store/" directory should not know the UI or views.
+            // The "src/data/" directory should not know the UI or views.
             patterns: [
               {
                 group: ['react-router-dom'],
@@ -122,6 +121,13 @@ module.exports = {
             ],
           },
         ],
+      },
+    },
+    {
+      files: ['**/store/**'],
+      rules: {
+        // Annoying rule within the store, since the Redux reducers need a default state.
+        '@typescript-eslint/default-param-last': 'off',
       },
     },
   ],
