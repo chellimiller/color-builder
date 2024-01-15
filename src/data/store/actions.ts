@@ -1,6 +1,6 @@
 // Actions are bound to the store to avoid Redux-specific concerns outside the module.
 
-import store from './store';
+import store from './_store';
 import { DialogState, ThemeState } from './types';
 
 export function closeDialog(): void {

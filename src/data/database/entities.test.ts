@@ -27,7 +27,7 @@ jest.mock('dexie-react-hooks', () => ({
   }),
 }));
 
-describe('store/entities', () => {
+describe('data/database/entities', () => {
   describe('useEntity', () => {
     it('should use useLiveQuery with a query to database.entities.get', () => {
       // Arrange

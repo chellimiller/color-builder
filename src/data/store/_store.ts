@@ -11,7 +11,7 @@ const initialThemeState: ThemeState = {
 };
 
 // @todo This is a good choice for persistence.
-function theme(
+export function themeReducer(
   state: ThemeState = initialThemeState,
   action: AppAction
 ): ThemeState {
@@ -19,7 +19,7 @@ function theme(
     case 'theme/mode/toggle':
       return { ...state, mode: state.mode === 'dark' ? 'light' : 'dark' };
     case 'theme/mode/reset':
-      return theme(state, {
+      return themeReducer(state, {
         type: 'theme/mode/set',
         payload: isDarkMode() ? 'dark' : 'light',
       });
@@ -32,7 +32,10 @@ function theme(
   }
 }
 
-function dialog(state: DialogState = null, action: AppAction): DialogState {
+export function dialogReducer(
+  state: DialogState = null,
+  action: AppAction
+): DialogState {
   switch (action.type) {
     case 'dialog/close':
       return null;
@@ -46,8 +49,8 @@ function dialog(state: DialogState = null, action: AppAction): DialogState {
 
 const store = configureStore<AppState, AppAction>({
   reducer: {
-    theme,
-    dialog,
+    theme: themeReducer,
+    dialog: dialogReducer,
   },
 });
 
