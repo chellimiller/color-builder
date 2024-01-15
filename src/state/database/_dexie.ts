@@ -1,13 +1,13 @@
 import Dexie, { Table } from 'dexie';
-import { Entity } from './types';
+import { Color } from '../types';
 
 class DexieDatabase extends Dexie {
-  entities!: Table<Entity, Entity['id']>;
+  colors!: Table<Color, Color['id']>;
 
   constructor() {
     super('color-builder');
     this.version(1).stores({
-      entities: '++id',
+      colors: '++id',
     });
   }
 }
