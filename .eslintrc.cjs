@@ -67,7 +67,7 @@ module.exports = {
                   'dexie-react-hooks',
                   '*redux*',
                   '**/data',
-                  '**/data/**',
+                  '**/state/**',
                   '**/views/**',
                 ],
                 message:
@@ -92,7 +92,7 @@ module.exports = {
                 message: 'State implementation should only be handled in data/',
               },
               {
-                group: ['**/data/**'],
+                group: ['**/state/**'],
                 message:
                   'Only import from the top level of the data directory.',
               },
@@ -102,12 +102,12 @@ module.exports = {
       },
     },
     {
-      files: ['**/data/**'],
+      files: ['**/state/**'],
       rules: {
         'no-restricted-imports': [
           'error',
           {
-            // The "src/data/" directory should not know the UI or views.
+            // The "src/state/" directory should not know the UI or views.
             patterns: [
               {
                 group: ['react-router-dom'],
