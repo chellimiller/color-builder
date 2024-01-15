@@ -1,6 +1,6 @@
 import { useLiveQuery } from 'dexie-react-hooks';
+import database from './_dexie';
 import { Entity } from './types';
-import database from './_database';
 
 function getEntity(id: Entity['id']): Promise<Entity | undefined> {
   return database.entities.get(id);

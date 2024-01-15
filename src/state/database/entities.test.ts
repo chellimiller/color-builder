@@ -1,9 +1,9 @@
 import { useLiveQuery } from 'dexie-react-hooks';
-import database from './_database';
+import database from './_dexie';
 import { useEntities, useEntity, setEntity, removeEntity } from './entities';
 import { Entity } from './types';
 
-jest.mock('./_database.ts', () => ({
+jest.mock('./_dexie.ts', () => ({
   __esModule: true,
   default: {
     entities: {
@@ -27,7 +27,7 @@ jest.mock('dexie-react-hooks', () => ({
   }),
 }));
 
-describe('store/entities', () => {
+describe('data/database/entities', () => {
   describe('useEntity', () => {
     it('should use useLiveQuery with a query to database.entities.get', () => {
       // Arrange

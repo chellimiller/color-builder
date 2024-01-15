@@ -34,16 +34,20 @@ Feel free to remove these restrictions if you decide they are unnecessary.
 
 ## Structure
 
-### `store/`
+### `state/`
 
 This directory manages the app state.
 It exports utilities to interact with the app state and
 it should be the only directory to know about the store's implementation.
 
+This is where both the Dexie database and Redux store lives.
+
 ### `ui/`
 
 This is for presentational building block components.
 It should not import any utilities from `views/` or `store/` or know anything about routes.
+
+This is where icons and styles also live.
 
 ### `views/`
 
