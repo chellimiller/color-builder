@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-const defaultStyle = css`
+const base = css`
 
 `;
 
@@ -8,7 +8,7 @@ const defaultStyle = css`
  * {{ description }}
  */
 const {{ name.camelCase }} = {
-  default: defaultStyle,
+  base,
 }
 
 export default {{ name.camelCase }};

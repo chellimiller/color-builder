@@ -10,6 +10,7 @@ import {
 } from '@floating-ui/react';
 import styled, { StyledComponent } from '@emotion/styled';
 import { DialogContextProvider, useDialogContext } from './DialogContext';
+import { heading, text } from '../../emotion';
 
 /**
  * Props for the Dialog
@@ -104,12 +105,16 @@ Dialog.Trigger = React.forwardRef<HTMLButtonElement, DialogTriggerProps>(
 Dialog.Provider = DialogContextProvider;
 
 Dialog.Title = styled.h1`
+  ${heading.sm};
   margin-bottom: var(--m--md);
 `;
 
-Dialog.Content = styled.div``;
+Dialog.Content = styled.h1`
+  ${text.md};
+`;
 
-Dialog.Actions = styled.div`
+Dialog.Actions = styled.h1`
+  ${text.md};
   margin-top: var(--m--md);
   display: flex;
   flex-flow: row wrap;
