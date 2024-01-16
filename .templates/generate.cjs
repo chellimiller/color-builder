@@ -88,6 +88,7 @@ require('yargs')
         PACKAGE_ROOT,
         'src',
         'ui',
+        'components',
         namePascalCase
       );
 
