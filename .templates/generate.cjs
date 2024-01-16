@@ -30,7 +30,9 @@ function toPascalCase(value) {
  */
 function toViewName(value) {
   const pascalCase = toPascalCase(value);
-  return pascalCase.endsWith('View') ? pascalCase : `${pascalCase}View`;
+  return pascalCase.endsWith('View') || pascalCase.endsWith('Dialog')
+    ? pascalCase
+    : `${pascalCase}View`;
 }
 
 /**
