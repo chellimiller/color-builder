@@ -20,6 +20,12 @@ module.exports = {
   },
   overrides: [
     {
+      files: ['index.ts'],
+      rules: {
+        'import/prefer-default-export': 'off',
+      },
+    },
+    {
       files: ['*.ts', '*.tsx'],
       parserOptions: {
         // this setting is required to use rules that require type information
