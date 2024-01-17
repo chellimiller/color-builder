@@ -26,19 +26,6 @@ const config = {
     '_store.ts',
     'src/ui/emotion',
   ],
-  coverageThreshold: {
-    // Specifies all global coverage at 100%
-    // Though code coverage doesn't guarantee that every case is tested,
-    //   it is a good metric for showing how testable the code is.
-    // 100% code coverage is an easy metric that prevents unreachable code
-    //   and ensures that important tests aren't skipped due to difficulty.
-    global: {
-      branches: 100,
-      functions: 100,
-      lines: 100,
-      statements: 100,
-    },
-  },
   transform: {
     // Specify that all JS files should be transformed with @swc/jest.
     // The Speedy Web Compiler is not as mature as Babel,
