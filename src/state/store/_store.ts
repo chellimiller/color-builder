@@ -1,6 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { isEqual } from 'lodash';
-import { AppState, AppAction, ThemeState, DialogState } from './types';
+import {
+  AppState,
+  AppAction,
+  ThemeState,
+  DialogState,
+  DialogKey,
+} from './types';
 
 const isDarkMode = () =>
   window.matchMedia &&
@@ -42,6 +48,30 @@ export function dialogReducer(
     case 'dialog/open':
       if (isEqual(state, action.payload)) return state;
       return action.payload;
+    case 'dialog/new-color/set-name':
+      if (!state || state.key !== DialogKey.NEW_COLOR) return state;
+      if (state.data.name === action.payload) return state;
+      return { ...state, data: { ...state.data, name: action.payload } };
+    case 'dialog/new-color/set-main-color':
+      if (!state || state.key !== DialogKey.NEW_COLOR) return state;
+      if (state.data.main.color === action.payload) return state;
+      return {
+        ...state,
+        data: {
+          ...state.data,
+          main: { ...state.data.main, color: action.payload },
+        },
+      };
+    case 'dialog/new-color/set-main-shade':
+      if (!state || state.key !== DialogKey.NEW_COLOR) return state;
+      if (state.data.main.shade === action.payload) return state;
+      return {
+        ...state,
+        data: {
+          ...state.data,
+          main: { ...state.data.main, shade: action.payload },
+        },
+      };
     default:
       return state;
   }

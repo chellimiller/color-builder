@@ -1,7 +1,10 @@
 import * as React from 'react';
 import clsx from 'clsx';
 import styled from '@emotion/styled';
-import { useThemeMode } from './state';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { openCreateColorDialog, toggleThemeMode, useThemeMode } from './state';
+import { Header, Main } from './ui/components';
+import { AllColorsView, ColorEditorDialog } from './views';
 
 const AppRoot = styled.div`
   position: fixed;
@@ -30,7 +33,26 @@ function App(): React.ReactElement | null {
 
   return (
     <AppRoot>
-      <h1>Hello World</h1>
+      <Header>
+        <Header.Title to="/">Color Builder</Header.Title>
+        <Header.Actions>
+          <button onClick={openCreateColorDialog} type="button">
+            +
+          </button>
+          <button onClick={toggleThemeMode} type="button">
+            Toggle Mode
+          </button>
+        </Header.Actions>
+      </Header>
+      <Main>
+        <Routes>
+          <Route path="/" element={<Navigate to="colors" />} />
+          <Route path="/colors">
+            <Route index element={<AllColorsView />} />
+          </Route>
+        </Routes>
+      </Main>
+      <ColorEditorDialog />
     </AppRoot>
   );
 }

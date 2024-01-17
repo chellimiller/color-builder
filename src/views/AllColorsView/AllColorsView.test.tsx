@@ -1,12 +1,12 @@
 import * as React from 'react';
 import * as renderer from 'react-test-renderer';
-import ColorSettingsDialogView from './ColorSettingsDialogView';
+import AllColorsView from './AllColorsView';
 
-describe('ColorSettingsDialogView', () => {
+describe('AllColorsView', () => {
   // Dummy test to get you started
   it('should render without errors', () => {
     // Act
-    const tree = renderer.create(<ColorSettingsDialogView />).toJSON();
+    const tree = renderer.create(<AllColorsView />).toJSON();
 
     // Assert
     expect(tree).toBeTruthy();

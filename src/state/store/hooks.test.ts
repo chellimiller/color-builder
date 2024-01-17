@@ -6,6 +6,8 @@ import {
   setThemeMode,
   toggleThemeMode,
 } from './actions';
+import { DialogKey } from './types';
+import { ColorSettings } from '../types';
 
 describe('data/store/hooks', () => {
   afterEach(jest.resetAllMocks);
@@ -36,8 +38,11 @@ describe('data/store/hooks', () => {
   describe('useDialogIsOpen', () => {
     it('should return whether specified dialog is currently open', () => {
       // Arrange
-      const key = 'foo';
-      const data = { hello: 'world' };
+      const key = DialogKey.NEW_COLOR;
+      const data: ColorSettings = {
+        name: '',
+        main: { color: 'red', shade: '40' },
+      };
 
       // Act
       const { result, rerender } = renderHook(() => useDialogIsOpen(key));
@@ -60,9 +65,15 @@ describe('data/store/hooks', () => {
   describe('useDialogData', () => {
     it('should return specified dialog data', () => {
       // Arrange
-      const key = 'foo';
-      const data = { hello: 'world' };
-      const next = { hola: 'mundo' };
+      const key = DialogKey.NEW_COLOR;
+      const data: ColorSettings = {
+        name: '',
+        main: { color: 'red', shade: '40' },
+      };
+      const next: ColorSettings = {
+        name: 'hi',
+        main: { color: 'red', shade: '40' },
+      };
 
       // Act
       const { result, rerender } = renderHook(() => useDialogData(key));
@@ -81,7 +92,7 @@ describe('data/store/hooks', () => {
       expect(result.current).toBe(next);
 
       // Verify data remains unchanged when given equivalent data.
-      openDialog({ key, data: { hola: 'mundo' } });
+      openDialog({ key, data: { ...next } });
       rerender();
       expect(result.current).toBe(next);
 

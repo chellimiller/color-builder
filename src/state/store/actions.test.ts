@@ -6,6 +6,7 @@ import {
   setThemeMode,
   toggleThemeMode,
 } from './actions';
+import { DialogState } from './types';
 
 jest.mock('./_store.ts', () => ({
   __esModule: true,
@@ -33,7 +34,7 @@ describe('data/store/actions', () => {
       const dialog = { key: 'foo', data: { foo: 'test', bar: 123 } };
 
       // Act
-      openDialog(dialog);
+      openDialog(dialog as unknown as Exclude<DialogState, null>);
 
       // Assert
       expect(store.dispatch).toHaveBeenCalledWith({
