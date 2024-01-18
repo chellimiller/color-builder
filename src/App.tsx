@@ -3,8 +3,9 @@ import clsx from 'clsx';
 import styled from '@emotion/styled';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { openCreateColorDialog, toggleThemeMode, useThemeMode } from './state';
-import { Header, Main } from './ui/components';
+import { Button, Header, Main } from './ui/components';
 import { AllColorsView, ColorEditorDialog } from './views';
+import { CreateIcon, DarkModeIcon, LightModeIcon } from './ui/icons';
 
 const AppRoot = styled.div`
   position: fixed;
@@ -36,12 +37,21 @@ function App(): React.ReactElement | null {
       <Header>
         <Header.Title to="/">Color Builder</Header.Title>
         <Header.Actions>
-          <button onClick={openCreateColorDialog} type="button">
-            +
-          </button>
-          <button onClick={toggleThemeMode} type="button">
-            Toggle Mode
-          </button>
+          <Button
+            onClick={openCreateColorDialog}
+            type="button"
+            label="Create New Color"
+            icon={<CreateIcon />}
+          >
+            New
+          </Button>
+          <Button
+            onClick={toggleThemeMode}
+            type="button"
+            label="Toggle Light/Dark Mode"
+            icon={mode === 'light' ? <DarkModeIcon /> : <LightModeIcon />}
+            hideLabel
+          />
         </Header.Actions>
       </Header>
       <Main>

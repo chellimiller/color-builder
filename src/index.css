@@ -73,6 +73,10 @@
   --m--lg: calc(var(--spacing) * 6);
   --m--xl: calc(var(--spacing) * 8);
 
+  --target--size--sm: calc(var(--spacing) * 11);
+  --target--size--md: calc(var(--spacing) * 11);
+  --target--size--lg: calc(var(--spacing) * 11);
+
   --scrollbar--size: calc(var(--spacing) * 3);
   --scrollbar--track-radius: 0;
   --scrollbar--thumb-radius: var(--border-radius--rounded);
@@ -100,6 +104,17 @@
   --color--neutral--on-container--hover: var(--color--neutral-35);
   --color--neutral--on-container--active: var(--color--neutral-25);
   --color--neutral--on-container--disabled: var(--color--neutral-50);
+
+  --color--neutral--primary: var(--color--neutral-45);
+  --color--neutral--primary--hover: var(--color--neutral-35);
+  --color--neutral--primary--active: var(--color--neutral-25);
+  --color--neutral--primary--disabled: var(--color--neutral-55);
+
+  --color--neutral--on-primary: var(--color--neutral-90);
+  --color--neutral--on-primary--muted: var(--color--neutral-75);
+  --color--neutral--on-primary--hover: var(--color--neutral-95);
+  --color--neutral--on-primary--active: var(--color--neutral-95);
+  --color--neutral--on-primary--disabled: var(--color--neutral-75);
 
   --scrollbar--thumb-color: var(--color--neutral-80);
   --scrollbar--thumb-color--hover: var(--color--neutral-70);
@@ -129,6 +144,17 @@
   --color--neutral--on-container--hover: var(--color--neutral-99);
   --color--neutral--on-container--active: var(--color--neutral-95);
   --color--neutral--on-container--disabled: var(--color--neutral-80);
+
+  --color--neutral--primary: var(--color--neutral-75);
+  --color--neutral--primary--hover: var(--color--neutral-85);
+  --color--neutral--primary--active: var(--color--neutral-95);
+  --color--neutral--primary--disabled: var(--color--neutral-60);
+
+  --color--neutral--on-primary: var(--color--neutral-35);
+  --color--neutral--on-primary--muted: var(--color--neutral-45);
+  --color--neutral--on-primary--hover: var(--color--neutral-25);
+  --color--neutral--on-primary--active: var(--color--neutral-15);
+  --color--neutral--on-primary--disabled: var(--color--neutral-40);
 
   --scrollbar--thumb-color: var(--color--neutral-50);
   --scrollbar--thumb-color--hover: var(--color--neutral-60);

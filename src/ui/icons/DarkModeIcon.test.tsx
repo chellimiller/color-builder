@@ -1,12 +1,12 @@
 import * as React from 'react';
 import * as renderer from 'react-test-renderer';
-import Button from './Button';
+import DarkModeIcon from './DarkModeIcon';
 
-describe('Button', () => {
+describe('DarkModeIcon', () => {
   // Dummy test to get you started
   it('should render without errors', () => {
     // Act
-    const tree = renderer.create(<Button label="test" />).toJSON();
+    const tree = renderer.create(<DarkModeIcon />).toJSON();
 
     // Assert
     expect(tree).toBeTruthy();

@@ -1,12 +1,12 @@
 import * as React from 'react';
 import * as renderer from 'react-test-renderer';
-import Button from './Button';
+import CreateIcon from './CreateIcon';
 
-describe('Button', () => {
+describe('CreateIcon', () => {
   // Dummy test to get you started
   it('should render without errors', () => {
     // Act
-    const tree = renderer.create(<Button label="test" />).toJSON();
+    const tree = renderer.create(<CreateIcon />).toJSON();
 
     // Assert
     expect(tree).toBeTruthy();
